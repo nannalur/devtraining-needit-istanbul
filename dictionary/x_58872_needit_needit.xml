@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" label=" NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" dependent="u_priority" dependent_on_field="u_priority" label="Priority" max_length="40" name="u_priority" type="string" use_dependent_field="true"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Legle" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="Human resources" sequence="0" value="hr"/>
+                <element label="Facilities" sequence="1" value="Facilities"/>
+                <element label="Legle" sequence="2" value="Legle"/>
+                <element label="your departmental choice" sequence="3" value="your departmental choice"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="  Legal 1 " label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="Human Resources 1" sequence="0" value="hr1"/>
+                <element label="Human Resources 2" sequence="1" value="hr2"/>
+                <element label="Facilities 1" sequence="2" value="Facilities 1"/>
+                <element label="Facilities 2" sequence="3" value="  Facilities 2"/>
+                <element label="Legal 1" sequence="4" value="  Legal 1"/>
+                <element label="Legal 2" sequence="5" value="  Legal 2"/>
+                <element label="Your Department Choice 1" sequence="6" value="your choice1"/>
+                <element label="Your Department Choice 2" sequence="7" value="your choice2"/>
+            </choice>
+        </element>
+        <element label="when needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <index name="index">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
